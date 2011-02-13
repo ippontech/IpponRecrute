@@ -17,15 +17,15 @@ public class IpponController {
     @Inject
     private OffreService offreService;
 
-	/**
-	 * Affiche l'offre..
-	 */
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public ModelAndView ipponRecrute() {
+    /**
+     * Affiche l'offre.
+     */
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ModelAndView ipponRecrute() {
         ModelAndView mv = new ModelAndView("ippon");
         mv.addObject("offre", offreService.getOffre());
-		return mv;
-	}
-	
+        return mv;
+    }
+
 }
 
