@@ -1,12 +1,13 @@
 package fr.ippon.rh.web;
 
-import fr.ippon.rh.service.OffreService;
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.inject.Inject;
+import fr.ippon.rh.service.OffreService;
 
 /**
  * Page Web d'offre d'emploi.
@@ -21,11 +22,9 @@ public class IpponController {
      * Affiche l'offre.
      */
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView ipponRecrute() {
-        ModelAndView mv = new ModelAndView("ippon");
-        mv.addObject("offre", offreService.getOffre());
-        return mv;
+    public String ipponRecrute(Model model) {
+        model.addAttribute("offre", offreService.getOffre());
+        return "ippon";
     }
-
 }
 
