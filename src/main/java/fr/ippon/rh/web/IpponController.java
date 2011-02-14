@@ -1,13 +1,12 @@
 package fr.ippon.rh.web;
 
-import javax.inject.Inject;
-
+import fr.ippon.rh.service.OffreService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import fr.ippon.rh.service.OffreService;
+import javax.inject.Inject;
 
 /**
  * Page Web d'offre d'emploi.
@@ -16,7 +15,7 @@ import fr.ippon.rh.service.OffreService;
 public class IpponController {
 
     @Inject
-    private OffreService offreService;
+    protected OffreService offreService;
 
     /**
      * Affiche l'offre.
