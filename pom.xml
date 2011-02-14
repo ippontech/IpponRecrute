@@ -105,6 +105,19 @@
             <artifactId>jasypt</artifactId>
             <version>1.7</version>
         </dependency>
+
+        <!-- Testing -->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <version>3.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
