@@ -3,6 +3,7 @@ package fr.ippon.rh.web;
 import fr.ippon.rh.service.OffreService;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.ui.ExtendedModelMap;
 
 import static junit.framework.Assert.assertEquals;
@@ -22,7 +23,7 @@ public class IpponControllerTest {
         //Init
         controller = new IpponController();
         mockOffreService = createMock(OffreService.class);
-        controller.offreService = mockOffreService;
+        ReflectionTestUtils.setField(controller, "offreService", mockOffreService);
     }
 
     @Test
@@ -30,14 +31,14 @@ public class IpponControllerTest {
         //Expect
         ExtendedModelMap model = new ExtendedModelMap();
         String text = "Offre";
-        expect(controller.offreService.getOffre()).andReturn(text);
+        expect(mockOffreService.getOffre()).andReturn(text);
 
         // When
-        replay(controller.offreService);
+        replay(mockOffreService);
         String returnViewName = controller.ipponRecrute(model);
 
         // Verify
-        verify(controller.offreService);
+        verify(mockOffreService);
         assertNotNull(returnViewName);
         assertEquals("ippon", returnViewName);
         assertEquals(1, model.size());

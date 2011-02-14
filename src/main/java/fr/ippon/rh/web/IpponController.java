@@ -15,7 +15,7 @@ import javax.inject.Inject;
 public class IpponController {
 
     @Inject
-    protected OffreService offreService;
+    private OffreService offreService;
 
     /**
      * Affiche l'offre.
