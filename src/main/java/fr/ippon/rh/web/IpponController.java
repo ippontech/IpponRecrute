@@ -14,8 +14,12 @@ import javax.inject.Inject;
 @Controller
 public class IpponController {
 
+    private final OffreService offreService;
+
     @Inject
-    private OffreService offreService;
+    public IpponController(OffreService offreService) {
+        this.offreService = offreService;
+    }
 
     /**
      * Affiche l'offre.
@@ -26,4 +30,3 @@ public class IpponController {
         return "ippon";
     }
 }
-
