@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Teste la classe OffreService.
+ * Teste la classe Etape4Service.
  */
 public class Etape4ServiceTest {
 
