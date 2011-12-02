@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.inject.Inject;
 
 /**
- * Page Web d'offre d'emploi.
+ * Controller principal, servant les pages Web du jeu.
  */
 @Controller
 public class IpponController {
